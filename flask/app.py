@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from crypt import methods
+from flask import Flask, render_template, request
 
 # Init app
 app = Flask(__name__)
@@ -13,6 +14,15 @@ def index():
 @app.route('/home')
 def home():
     return render_template('home.html')
+
+@app.route('/predict', methods = ['GET', 'POST'])
+def predict():
+    if request.method == "POST":
+        firstname = request.form['firstname']
+        lastname = request.form['lastname']
+        birthday = request.form['birthday']
+
+    return render_template('home.html', firstname = firstname, lastname = lastname, birthday = birthday)
 
 @app.route('/about')
 def about():

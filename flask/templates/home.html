@@ -4,7 +4,32 @@
 </head>
 <body>
 <div>
-    <h2>Home page for first demo mlapp</h2>
+    <h1>Home page for first demo mlapp</h1>
 </div>
+
+<div> Please enter your Name and DOB  </div>
+
+<div>
+    <form method="POST" action="/predict">
+        <input type="text" name = "firstname"
+        placeholder="First Name">
+
+        <input type="text" name = "lastname"
+        placeholder="Last Name">
+
+        <input type="date" name="birthday">
+
+        <button type="submit">Submit</button>
+        <button type="clear">Clear</button>
+    </form>   
+</div>
+
+<div>
+<p>Your Firstname is {{firstname}}, Surname is {{lastname}} and DOB is {{birthday}} </p>
+
+</div>
+
+<p><strong>Note:</strong> type="date" is not supported in Internet Explorer 11 or prior Safari 14.1.</p>
+
 </body>
 </html>
